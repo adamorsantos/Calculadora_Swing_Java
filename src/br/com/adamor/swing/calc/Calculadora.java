@@ -87,23 +87,53 @@ public class Calculadora extends javax.swing.JFrame {
         jButtonDiv.setText("/");
         jButtonDiv.setMaximumSize(new java.awt.Dimension(41, 23));
         jButtonDiv.setMinimumSize(new java.awt.Dimension(41, 23));
+        jButtonDiv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDivActionPerformed(evt);
+            }
+        });
 
         jButtonPotencia.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jButtonPotencia.setText("^");
         jButtonPotencia.setMaximumSize(new java.awt.Dimension(41, 23));
         jButtonPotencia.setMinimumSize(new java.awt.Dimension(41, 23));
+        jButtonPotencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPotenciaActionPerformed(evt);
+            }
+        });
 
         jButtonPorcentagem.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonPorcentagem.setText("%");
+        jButtonPorcentagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPorcentagemActionPerformed(evt);
+            }
+        });
 
         jButtonSete.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonSete.setText("7");
+        jButtonSete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSeteActionPerformed(evt);
+            }
+        });
 
         jButtonQuatro.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonQuatro.setText("4");
+        jButtonQuatro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonQuatroActionPerformed(evt);
+            }
+        });
 
         jButtonUm.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonUm.setText("1");
+        jButtonUm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUmActionPerformed(evt);
+            }
+        });
 
         jButtonZero.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonZero.setText("0");
@@ -115,36 +145,86 @@ public class Calculadora extends javax.swing.JFrame {
 
         jButtonOito.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonOito.setText("8");
+        jButtonOito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOitoActionPerformed(evt);
+            }
+        });
 
         jButtonCinco.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonCinco.setText("5");
+        jButtonCinco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCincoActionPerformed(evt);
+            }
+        });
 
         jButtonDois.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonDois.setText("2");
+        jButtonDois.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDoisActionPerformed(evt);
+            }
+        });
 
         jButtonPonto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonPonto.setText(".");
 
         jButtonNove.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonNove.setText("9");
+        jButtonNove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNoveActionPerformed(evt);
+            }
+        });
 
         jButtonSeis.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonSeis.setText("6");
+        jButtonSeis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSeisActionPerformed(evt);
+            }
+        });
 
         jButtonTres.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonTres.setText("3");
+        jButtonTres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTresActionPerformed(evt);
+            }
+        });
 
         jButtonMulti.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonMulti.setText("*");
+        jButtonMulti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMultiActionPerformed(evt);
+            }
+        });
 
         jButtonSubtracao.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonSubtracao.setText("-");
+        jButtonSubtracao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSubtracaoActionPerformed(evt);
+            }
+        });
 
         jButtonSoma.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonSoma.setText("+");
+        jButtonSoma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSomaActionPerformed(evt);
+            }
+        });
 
         jButtonIgual.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButtonIgual.setText("=");
+        jButtonIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIgualActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -257,8 +337,99 @@ public class Calculadora extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZeroActionPerformed
-        // TODO add your handling code here:
+        String n0 = "0";
+        int num0 = Integer.parseInt(n0);
+        jTextResultado.setText(n0);
     }//GEN-LAST:event_jButtonZeroActionPerformed
+
+    private void jButtonUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUmActionPerformed
+        String n1 = "1";
+        int num1 = Integer.parseInt(n1);
+        jTextResultado.setText(n1);
+    }//GEN-LAST:event_jButtonUmActionPerformed
+
+    private void jButtonDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDoisActionPerformed
+        String n2 = "2";
+        int num2 = Integer.parseInt(n2);
+        jTextResultado.setText(n2);
+    }//GEN-LAST:event_jButtonDoisActionPerformed
+
+    private void jButtonTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTresActionPerformed
+        String n3 = "3";
+        int num3 = Integer.parseInt(n3);
+        jTextResultado.setText(n3);
+    }//GEN-LAST:event_jButtonTresActionPerformed
+
+    private void jButtonQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuatroActionPerformed
+        String n4 = "4";
+        int num4 = Integer.parseInt(n4);
+        jTextResultado.setText(n4);
+    }//GEN-LAST:event_jButtonQuatroActionPerformed
+
+    private void jButtonCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCincoActionPerformed
+        String n5 = "5";
+        int num5 = Integer.parseInt(n5);
+        jTextResultado.setText(n5);
+    }//GEN-LAST:event_jButtonCincoActionPerformed
+
+    private void jButtonSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSeisActionPerformed
+        String n6 = "6";
+        int num6 = Integer.parseInt(n6);
+        jTextResultado.setText(n6);
+    }//GEN-LAST:event_jButtonSeisActionPerformed
+
+    private void jButtonSeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSeteActionPerformed
+        String n7 = "7";
+        int num7 = Integer.parseInt(n7);
+        jTextResultado.setText(n7);
+    }//GEN-LAST:event_jButtonSeteActionPerformed
+
+    private void jButtonOitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOitoActionPerformed
+        String n8 = "8";
+        int num8 = Integer.parseInt(n8);
+        jTextResultado.setText(n8);
+    }//GEN-LAST:event_jButtonOitoActionPerformed
+
+    private void jButtonNoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNoveActionPerformed
+        String n9 = "9";
+        int num9 = Integer.parseInt(n9);
+        jTextResultado.setText(n9);
+    }//GEN-LAST:event_jButtonNoveActionPerformed
+
+    private void jButtonSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSomaActionPerformed
+        String simb_soma = "+";
+        jTextResultado.setText(simb_soma);
+    }//GEN-LAST:event_jButtonSomaActionPerformed
+
+    private void jButtonSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubtracaoActionPerformed
+        String simb_sub = "-";
+        jTextResultado.setText(simb_sub);
+    }//GEN-LAST:event_jButtonSubtracaoActionPerformed
+
+    private void jButtonMultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiActionPerformed
+        String simb_mult = "x";
+        jTextResultado.setText(simb_mult);
+    }//GEN-LAST:event_jButtonMultiActionPerformed
+
+    private void jButtonDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivActionPerformed
+        String simb_div = "/";
+        jTextResultado.setText(simb_div);
+    }//GEN-LAST:event_jButtonDivActionPerformed
+
+    private void jButtonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIgualActionPerformed
+        String simb_igual = "=";
+        jTextResultado.setText(simb_igual);
+    }//GEN-LAST:event_jButtonIgualActionPerformed
+
+    private void jButtonPotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPotenciaActionPerformed
+        String simb_potencia = "^";
+        jTextResultado.setText(simb_potencia);
+    }//GEN-LAST:event_jButtonPotenciaActionPerformed
+
+    private void jButtonPorcentagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPorcentagemActionPerformed
+        String simb_porcento = "%";
+        jTextResultado.setText(simb_porcento);
+    }//GEN-LAST:event_jButtonPorcentagemActionPerformed
 
     /**
      * @param args the command line arguments
