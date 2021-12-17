@@ -6,6 +6,7 @@
 package br.com.adamor.swing.calc.view;
 
 import br.com.adamor.swing.calc.controller.CalculadoraController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -410,6 +411,7 @@ public class CalculadoraView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDivActionPerformed
 
     private void jButtonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIgualActionPerformed
+
         valor2 = retornaValorConvertido(jTextResultado.getText());
 
         if (operacao == "soma") {
@@ -519,4 +521,12 @@ public class CalculadoraView extends javax.swing.JFrame {
         return val;
     }
 
+    /*private Boolean validaEntradas() {
+        if (jTextResultado.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Campos não podem ser vazios");
+            return false;
+        } else {
+            return true;
+        }
+    }*/
 }
