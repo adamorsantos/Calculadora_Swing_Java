@@ -12,20 +12,18 @@ import br.com.adamor.swing.calc.controller.CalculadoraController;
  * @author adamo
  */
 public class CalculadoraView extends javax.swing.JFrame {
-    
-    
-    private CalculadoraController calculadoraController;
+
     /**
      * Creates new form Calculadora
      */
     public CalculadoraView() {
         initComponents();
         setLocationRelativeTo(null);
-        this.calculadoraController = new CalculadoraController();
     }
 
     private String operacao;
     private Float valor1, valor2;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -413,32 +411,32 @@ public class CalculadoraView extends javax.swing.JFrame {
 
     private void jButtonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIgualActionPerformed
         valor2 = retornaValorConvertido(jTextResultado.getText());
-        
-        if (operacao == "soma"){
-            Float res = calculadoraController.adicao(valor1, valor2);
+
+        if (operacao == "soma") {
+            Float res = CalculadoraController.adicao(valor1, valor2);
             jTextResultado.setText(res.toString());
         }
-        
-        if (operacao == "subtracao"){
-            Float res = calculadoraController.subtracao(valor1, valor2);
+
+        if (operacao == "subtracao") {
+            Float res = CalculadoraController.subtracao(valor1, valor2);
             jTextResultado.setText(res.toString());
         }
-        
-        if (operacao == "multiplicacao"){
-            Float res = calculadoraController.multiplicacao(valor1, valor2);
+
+        if (operacao == "multiplicacao") {
+            Float res = CalculadoraController.multiplicacao(valor1, valor2);
             jTextResultado.setText(res.toString());
         }
-        
-        if (operacao == "divisao"){
-            Float res = calculadoraController.divisao(valor1, valor2);
+
+        if (operacao == "divisao") {
+            Float res = CalculadoraController.divisao(valor1, valor2);
             jTextResultado.setText(res.toString());
         }
-        
-        if (operacao == "potencia"){
-            Float res = calculadoraController.potencia(valor1, valor2);
+
+        if (operacao == "potencia") {
+            Float res = CalculadoraController.potencia(valor1, valor2);
             jTextResultado.setText(res.toString());
         }
-        
+
     }//GEN-LAST:event_jButtonIgualActionPerformed
 
     private void jButtonPotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPotenciaActionPerformed
