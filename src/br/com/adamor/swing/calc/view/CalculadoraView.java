@@ -5,6 +5,7 @@
  */
 package br.com.adamor.swing.calc.view;
 
+import br.com.adamor.swing.calc.bean.CalculadoraBean;
 import br.com.adamor.swing.calc.controller.CalculadoraController;
 import javax.swing.JOptionPane;
 
@@ -23,7 +24,6 @@ public class CalculadoraView extends javax.swing.JFrame {
     }
 
     private String operacao;
-    private Float valor1, valor2;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -82,7 +82,6 @@ public class CalculadoraView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculadora");
 
-        jTextResultado.setEditable(false);
         jTextResultado.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         jTextResultado.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
@@ -288,9 +287,9 @@ public class CalculadoraView extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(33, 33, 33)
+                .addComponent(jTextResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonLimpar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -330,21 +329,98 @@ public class CalculadoraView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIgualActionPerformed
+        CalculadoraBean calculadoraBean = validaEntradas();
+        if (calculadoraBean != null) {
+            Float valor2 = retornaValorConvertido(jTextResultado.getText());
+
+            if (operacao == "soma") {
+                Float res = CalculadoraController.adicao(calculadoraBean);
+                jTextResultado.setText(res.toString());
+            }
+
+            if (operacao == "subtracao") {
+                Float res = CalculadoraController.subtracao(calculadoraBean);
+                jTextResultado.setText(res.toString());
+            }
+
+            if (operacao == "multiplicacao") {
+                Float res = CalculadoraController.multiplicacao(calculadoraBean);
+                jTextResultado.setText(res.toString());
+            }
+
+            if (operacao == "divisao") {
+                Float res = CalculadoraController.divisao(calculadoraBean);
+                jTextResultado.setText(res.toString());
+            }
+
+            if (operacao == "potencia") {
+                Float res = CalculadoraController.potencia(calculadoraBean);
+                jTextResultado.setText(res.toString());
+            }
+        }
+    }//GEN-LAST:event_jButtonIgualActionPerformed
+
+    private void jButtonSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSomaActionPerformed
+        Float valor1 = retornaValorConvertido(jTextResultado.getText());
+        jTextResultado.setText("");
+        operacao = "soma";
+    }//GEN-LAST:event_jButtonSomaActionPerformed
+
+    private void jButtonSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubtracaoActionPerformed
+        Float valor1 = retornaValorConvertido(jTextResultado.getText());
+        jTextResultado.setText("");
+        operacao = "subtracao";
+    }//GEN-LAST:event_jButtonSubtracaoActionPerformed
+
+    private void jButtonMultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiActionPerformed
+        Float valor1 = retornaValorConvertido(jTextResultado.getText());
+        jTextResultado.setText("");
+        operacao = "multiplicacao";
+    }//GEN-LAST:event_jButtonMultiActionPerformed
+
+    private void jButtonTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTresActionPerformed
+        jTextResultado.setText(jTextResultado.getText() + "3");
+    }//GEN-LAST:event_jButtonTresActionPerformed
+
+    private void jButtonSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSeisActionPerformed
+        jTextResultado.setText(jTextResultado.getText() + "6");
+    }//GEN-LAST:event_jButtonSeisActionPerformed
+
+    private void jButtonNoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNoveActionPerformed
+        jTextResultado.setText(jTextResultado.getText() + "9");
+    }//GEN-LAST:event_jButtonNoveActionPerformed
+
+    private void jButtonPontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPontoActionPerformed
+        jTextResultado.setText(jTextResultado.getText() + ".");
+    }//GEN-LAST:event_jButtonPontoActionPerformed
+
+    private void jButtonDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDoisActionPerformed
+        jTextResultado.setText(jTextResultado.getText() + "2");
+    }//GEN-LAST:event_jButtonDoisActionPerformed
+
+    private void jButtonCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCincoActionPerformed
+        jTextResultado.setText(jTextResultado.getText() + "5");
+    }//GEN-LAST:event_jButtonCincoActionPerformed
+
+    private void jButtonOitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOitoActionPerformed
+        jTextResultado.setText(jTextResultado.getText() + "8");
+    }//GEN-LAST:event_jButtonOitoActionPerformed
 
     private void jButtonZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZeroActionPerformed
         jTextResultado.setText(jTextResultado.getText() + "0");
@@ -354,102 +430,25 @@ public class CalculadoraView extends javax.swing.JFrame {
         jTextResultado.setText(jTextResultado.getText() + "1");
     }//GEN-LAST:event_jButtonUmActionPerformed
 
-    private void jButtonDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDoisActionPerformed
-        jTextResultado.setText(jTextResultado.getText() + "2");
-    }//GEN-LAST:event_jButtonDoisActionPerformed
-
-    private void jButtonTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTresActionPerformed
-        jTextResultado.setText(jTextResultado.getText() + "3");
-    }//GEN-LAST:event_jButtonTresActionPerformed
-
     private void jButtonQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuatroActionPerformed
         jTextResultado.setText(jTextResultado.getText() + "4");
     }//GEN-LAST:event_jButtonQuatroActionPerformed
-
-    private void jButtonCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCincoActionPerformed
-        jTextResultado.setText(jTextResultado.getText() + "5");
-    }//GEN-LAST:event_jButtonCincoActionPerformed
-
-    private void jButtonSeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSeisActionPerformed
-        jTextResultado.setText(jTextResultado.getText() + "6");
-    }//GEN-LAST:event_jButtonSeisActionPerformed
 
     private void jButtonSeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSeteActionPerformed
         jTextResultado.setText(jTextResultado.getText() + "7");
     }//GEN-LAST:event_jButtonSeteActionPerformed
 
-    private void jButtonOitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOitoActionPerformed
-        jTextResultado.setText(jTextResultado.getText() + "8");
-    }//GEN-LAST:event_jButtonOitoActionPerformed
-
-    private void jButtonNoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNoveActionPerformed
-        jTextResultado.setText(jTextResultado.getText() + "9");
-    }//GEN-LAST:event_jButtonNoveActionPerformed
-
-    private void jButtonSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSomaActionPerformed
-        valor1 = retornaValorConvertido(jTextResultado.getText());
-        jTextResultado.setText("");
-        operacao = "soma";
-    }//GEN-LAST:event_jButtonSomaActionPerformed
-
-    private void jButtonSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubtracaoActionPerformed
-        valor1 = retornaValorConvertido(jTextResultado.getText());
-        jTextResultado.setText("");
-        operacao = "subtracao";
-    }//GEN-LAST:event_jButtonSubtracaoActionPerformed
-
-    private void jButtonMultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiActionPerformed
-        valor1 = retornaValorConvertido(jTextResultado.getText());
-        jTextResultado.setText("");
-        operacao = "multiplicacao";
-    }//GEN-LAST:event_jButtonMultiActionPerformed
-
-    private void jButtonDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivActionPerformed
-        valor1 = retornaValorConvertido(jTextResultado.getText());
-        jTextResultado.setText("");
-        operacao = "divisao";
-    }//GEN-LAST:event_jButtonDivActionPerformed
-
-    private void jButtonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIgualActionPerformed
-
-        valor2 = retornaValorConvertido(jTextResultado.getText());
-
-        if (operacao == "soma") {
-            Float res = CalculadoraController.adicao(valor1, valor2);
-            jTextResultado.setText(res.toString());
-        }
-
-        if (operacao == "subtracao") {
-            Float res = CalculadoraController.subtracao(valor1, valor2);
-            jTextResultado.setText(res.toString());
-        }
-
-        if (operacao == "multiplicacao") {
-            Float res = CalculadoraController.multiplicacao(valor1, valor2);
-            jTextResultado.setText(res.toString());
-        }
-
-        if (operacao == "divisao") {
-            Float res = CalculadoraController.divisao(valor1, valor2);
-            jTextResultado.setText(res.toString());
-        }
-
-        if (operacao == "potencia") {
-            Float res = CalculadoraController.potencia(valor1, valor2);
-            jTextResultado.setText(res.toString());
-        }
-
-    }//GEN-LAST:event_jButtonIgualActionPerformed
-
     private void jButtonPotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPotenciaActionPerformed
-        valor1 = retornaValorConvertido(jTextResultado.getText());
+        Float valor1 = retornaValorConvertido(jTextResultado.getText());
         jTextResultado.setText("");
         operacao = "potencia";
     }//GEN-LAST:event_jButtonPotenciaActionPerformed
 
-    private void jButtonPontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPontoActionPerformed
-        jTextResultado.setText(jTextResultado.getText() + ".");
-    }//GEN-LAST:event_jButtonPontoActionPerformed
+    private void jButtonDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivActionPerformed
+        Float valor1 = retornaValorConvertido(jTextResultado.getText());
+        jTextResultado.setText("");
+        operacao = "divisao";
+    }//GEN-LAST:event_jButtonDivActionPerformed
 
     private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
         jTextResultado.setText(" ");
@@ -521,12 +520,22 @@ public class CalculadoraView extends javax.swing.JFrame {
         return val;
     }
 
-    /*private Boolean validaEntradas() {
+    private CalculadoraBean validaEntradas() {
+        CalculadoraBean calculadoraBean = new CalculadoraBean();
         if (jTextResultado.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Campos não podem ser vazios");
-            return false;
+            JOptionPane.showMessageDialog(null, "Campo não pode ser vazio");
+            jTextResultado.grabFocus();
+            return null;
         } else {
-            return true;
+            try {
+                calculadoraBean.setN1(Float.parseFloat(jTextResultado.getText()));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Campo tem que ser numerico");
+                jTextResultado.setText("");
+                jTextResultado.grabFocus();
+                return null;
+            }
+            return calculadoraBean;
         }
-    }*/
+    }
 }
